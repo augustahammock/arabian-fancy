@@ -1,0 +1,28 @@
+header.global-header
+    .website-title
+        .center
+            h1 Arabian Fancy Tack
+            h2 Beautiful Tack for the world's most Beautiful Horses
+
+    nav.global-nav
+        .center
+            .nav-container
+                if bodyClass == 'home'
+                     a(href='#{paths.root}', class='active') Home
+                else
+                     a(href='#{paths.root}') Home
+
+                if bodyClass == 'tack'
+                     a(href='#{paths.root}/tack', class='active') Tack
+                else
+                     a(href='#{paths.root}/tack') Tack
+
+                if bodyClass == 'faq'
+                     a(href='#{paths.root}/faq', class='active') FAQ
+                else
+                     a(href='#{paths.root}/faq') FAQ
+
+                if bodyClass == 'contact'
+                     a(href='#{paths.root}/contact', class='active') Contact
+                else
+                     a(href='#{paths.root}/contact') Contact

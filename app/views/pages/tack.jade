@@ -1,0 +1,45 @@
+extends ../layouts/main
+
+block append footer-scripts
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    script(src='#{paths.js}/lib/fancybox/source/jquery.fancybox.pack.js')
+    script(src='#{paths.js}/lib/jquery.mixitup.js')
+    script(src='#{paths.js}/tack.js')
+    script(src='#{paths.js}/gallery.js')
+
+block content
+
+    .center
+
+        //- aside.contact-gina
+        //-     p More features are coming soon! <a href='#{paths.root}/contact'>Contact Gina</a> for pricing!
+
+
+
+        section.utilities
+
+            article.colorFilters
+                p Show tack that complements:
+                ul
+                    li.filter(data-filter='all') All horses
+                    li.filter(data-filter='.grey, .all') Greys
+                    li.filter(data-filter='.bay, .all') Bays
+                    li.filter(data-filter='.chestnut, .all') Chestnut
+                    li.filter(data-filter='.black, .all') Blacks
+
+            article.favorites
+                h3 My Favorites
+                p.noFavorites Add a design you like by clicking its <i class='fa fa-heart-o'></i> symbol.
+
+                ul.favoritesList
+
+                p: a.button.button--orderFavorites(href='#{paths.root}/contact') Order tack like my Favorites
+
+            article
+                p.small
+                    | Have a question or unique request?
+                    | See the <a href='#{paths.root}/faq'>FAQ</a> or <a href='#{paths.root}/contact'>contact Gina</a> for more information.
+
+
+
+        section.tack-images

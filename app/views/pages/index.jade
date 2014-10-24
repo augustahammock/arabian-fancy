@@ -1,0 +1,29 @@
+extends ../layouts/main
+
+block content
+
+    section.hero
+        //- .center
+        //-     p Show tack that compliments <span class="color">grey</span> Arabians.
+        //-     aside.color-viewer
+        //-         img(src='#{paths.img}/home/colorViewer--grey.png' alt='Grey Arabians')
+        //-         img(src='#{paths.img}/home/colorViewer--bay.png' alt='Bay Arabians')
+        //-         img(src='#{paths.img}/home/colorViewer--chestnut.png' alt='Chestnut Arabians')
+        //-         img(src='#{paths.img}/home/colorViewer--black.png' alt='Black Arabians')
+        //-     p
+        //-         a(href="#{paths.root}/tack", class="button button--viewFilteredTack") View Tack
+        //-         a(href="#{paths.root}/tack", class="button button--viewAllTack") View all tack
+
+    .center
+        section.intro
+            h3 Adorning Arabian Legends Around the World...
+            p Gina Dupree, owner and founder of Arabian Fancy Tack, sets the standard for beautiful hand-made adornments for Arabian horses. Her designs are featured in publications and show rings across the globe and never cease to inspire.
+            //- p: a(href='#{paths.root}/contact') Commission Gina for your Arabian's next piece!
+
+        section.gallery--spotlight
+            h3 Arabian Fancy is in the Spotlight!
+            ul
+                li: img(src='#{paths.img}/home/spotlight_1.jpg', alt='Tack by Arabian Fancy')
+                li: img(src='#{paths.img}/home/spotlight_2.jpg', alt='Tack by Arabian Fancy')
+                li: img(src='#{paths.img}/home/spotlight_3.jpg', alt='Tack by Arabian Fancy')
+                li: img(src='#{paths.img}/home/spotlight_4.jpg', alt='Tack by Arabian Fancy')

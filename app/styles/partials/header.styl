@@ -1,0 +1,47 @@
+//
+// Header styles
+//---------------------------------------------------------
+
+.global-header
+    margin-bottom 30px
+
+    .website-title
+        text-align center
+        padding 5px 0 7px
+
+        h1
+            margin 0
+
+        h2
+            display none
+            margin -5px 0 0
+
+
+
+
+    .global-nav
+        text-align center
+        background $cranberry-dark url(../img/global/bg_nav.png) repeat-x center center
+
+        .nav-container
+            display inline-block
+            background $cranberry-dark
+            padding 0 30px
+
+        a:link,
+        a:visited
+            display block
+            float left
+            font-family $serifiqo
+            font-size 1.4rem
+            color white
+            text-decoration none
+            text-transform uppercase
+            padding 13px 20px 8px
+
+        a:hover
+            color $cream
+            transition color .2s ease
+
+        a.active
+            color $cream

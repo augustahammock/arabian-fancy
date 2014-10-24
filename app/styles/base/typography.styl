@@ -1,0 +1,92 @@
+//
+// Typography styles
+//---------------------------------------------------------
+
+// Font inclusions
+
+@font-face
+    font-family 'Livory'
+    src url('../fonts/2B8A5F_0_0.eot')
+    src url('../fonts/2B8A5F_0_0.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/2B8A5F_0_0.woff') format('woff'),
+        url('../fonts/2B8A5F_0_0.ttf') format('truetype')
+    font-weight normal
+
+@font-face
+    font-family 'MonteCarlo'
+    src url('../fonts/2B8A5F_1_0.eot')
+    src url('../fonts/2B8A5F_1_0.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/2B8A5F_1_0.woff') format('woff'),
+        url('../fonts/2B8A5F_1_0.ttf') format('truetype')
+    font-weight normal
+
+@font-face
+    font-family 'Serifiqo'
+    src url('../fonts/2B8A5F_2_0.eot')
+    src url('../fonts/2B8A5F_2_0.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/2B8A5F_2_0.woff') format('woff'),
+        url('../fonts/2B8A5F_2_0.ttf') format('truetype')
+    font-weight normal
+
+@font-face
+    font-family 'FontAwesome'
+    src url('../fonts/font-awesome/fontawesome-webfont.eot')
+    src url('../fonts/font-awesome/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/font-awesome/fontawesome-webfont.woff') format('woff'),
+        url('../fonts/font-awesome/fontawesome-webfont.ttf') format('truetype')
+    font-weight normal
+
+
+// Text element styles
+
+h1
+    font-family $serifiqo
+    font-size 3rem
+    font-weight lighter
+
+h2
+    font-family $monteCarlo
+    font-size 2rem
+    color $goldenrod
+    font-weight lighter
+
+h3
+    font-family $serifiqo
+    font-size 1.6rem
+    line-height 2rem
+    font-weight lighter
+    color $goldenrod
+    margin 0 0 8px
+
+p
+    font-size .9rem
+    line-height 1.3rem
+    margin 0
+
+a, a link, a visited
+    color $cranberry
+    text-decoration none
+    transition all .2s
+
+  & hover
+    color $goldenrod
+    transition all .2s
+
+  .global-nav &
+    color white
+
+    & hover
+        color $cream
+
+.page-title
+    text-align center
+    margin 40px 0 30px
+
+.photo-credits
+    font-size .7rem
+    line-height 1rem
+    color $mist-dark
+
+.small
+    font-size 12px
+    line-height 16px

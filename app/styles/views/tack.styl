@@ -1,0 +1,106 @@
+//
+// Tack page styles
+//---------------------------------------------------------
+
+body.tack
+
+    .page-wrap > .center
+        overflow hidden
+
+    .contact-gina
+        text-align center
+        margin-bottom 30px
+
+    .color-filters
+        background $mist
+        overflow hidden
+        text-align center
+        margin-bottom 30px
+
+        > *
+            vertical-align top
+
+        p
+            display inline-block
+            font-size 16px
+            padding 10px 15px 10px 0
+
+        ul
+            display inline-block
+            margin 0
+            padding 0
+            overflow hidden
+
+            li
+                display block
+                float left
+                font-size 16px
+                color $cranberry
+                padding 10px 15px
+                cursor pointer
+
+                &:hover
+                    background $cranberry
+                    color $white
+                    transition all .2s
+
+                &.active
+                    background $cranberry
+                    color $white
+
+
+    // My Favorites
+
+    .utilities
+        float left
+        width 25%
+        background $cream-lighter
+        padding 20px
+
+        h3
+            color $cranberry-dark
+
+        p
+            color $beige-dark
+
+        .button
+            display block
+            font-size 16px
+            text-align center
+            padding 10px 15px
+
+    .favorites-list
+        list-style none
+        background $cream-light
+        margin 20px 0
+        padding 10px
+
+        li
+            display inline-block
+            width 47%
+            background red
+            margin 0 1% 1%
+            vertical-align top
+
+    .misc
+        background url(../img/global/emphasisFlourish.png) 0 center no-repeat
+        margin-top 40px
+        padding-left 40px
+
+    .tack-images
+        float right
+        width 75%
+        overflow hidden
+        margin 0 -1.25%
+
+        > div
+            display none
+            vertical-align top
+            width 22.5%
+            height 177px
+            margin 0 1.25% 21px
+            overflow hidden
+
+            img
+                width 100%
+                background $cranberry

@@ -1,0 +1,72 @@
+//
+// Footer styles
+//---------------------------------------------------------
+
+.global-footer
+    background $beige
+    padding 20px 0
+    margin-top 60px
+
+    p
+        font-size .7rem
+        line-height 1rem
+        color white
+        margin 0
+
+    a
+        color $cream
+
+        &:hover
+            color white
+
+    .center
+        overflow hidden
+
+    .social
+        float left
+        max-width 300px
+
+        .facebook
+            display block
+            float left
+            width 30px
+            height 30px
+            font-size 1.2rem
+            color white
+            background $beige-dark
+            margin-right 10px
+            padding-top 3px
+            text-align center
+
+            &:hover
+                background $cranberry
+
+    .legal
+        float right
+        text-align right
+
+
+// Sticky footer styles
+
+*
+    margin 0
+
+html, body
+    height 100%
+
+.page-wrap
+    min-height 100%
+    /* equal to footer height */
+    margin-bottom -130px
+
+.page-wrap:after
+    content ""
+    display block
+
+.global-footer
+    height 70px
+    margin-top 60px
+
+.page-wrap:after
+    /* .push must be the same height as footer */
+    height 130px

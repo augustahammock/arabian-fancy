@@ -1,0 +1,35 @@
+//
+// Lib imports
+// NOTE: These are exposed through Gulp and live
+//       in node_modules.
+//---------------------------------------------------------
+@import 'nib';
+@import 'jeet';
+@import 'rupture';
+
+//
+// Base styles
+// NOTE: This structure is loosely based on a
+//       combination of Brad Frost's atomic design -- http://bradfrostweb.com/blog/post/atomic-web-design/
+//       and SMACCS -- https://smacss.com/
+//---------------------------------------------------------
+@import 'base/resets';      // Any necessary project level resets (normalize, reset, etc...)
+@import 'base/variables';   // Variable declarations
+@import 'base/buttons';     // Global button styles and states
+@import 'base/typography';  // Font family declarations and global type styles
+@import 'base/layout';      // Base-level layout, container, and grid system values
+@import 'base/inputs';      // All user input fields and states
+@import 'base/mixins';      // Base mixins for use in components & pages
+@import 'base/zindex';      // Z-index declarations here
+
+//
+// Components
+// NOTE: UI partials-specific styles
+//---------------------------------------------------------
+@import 'partials/**/*';  // Forms, navs, user cards, etc...
+
+//
+// Pages
+// NOTE: UI page-specific styles
+//---------------------------------------------------------
+@import 'views/**/*';       // Templates and pages
