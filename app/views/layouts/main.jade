@@ -4,7 +4,7 @@ html(lang='eng')
   <!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
   <!--[if (gt IE 9)]><!--> <html> <!--<![endif]-->
 
-  head
+head
 
     title #{title}
 
@@ -17,8 +17,8 @@ html(lang='eng')
     meta(property='og:image', content='#{shareImage}')
 
     block styles
-      link(rel='stylesheet', href='#{paths.css}/font-awesome.min.css')
-      link(rel='stylesheet', href='#{paths.css}/app.css')
+        link(rel='stylesheet', href='#{paths.css}/lib/font-awesome.min.css')
+        link(rel='stylesheet', href='#{paths.css}/app.css')
 
     block header-scripts
 
@@ -28,12 +28,12 @@ html(lang='eng')
 
     .page-wrap
 
-      block header
-        include ../partials/header
+        block header
+            include ../partials/header
 
-      block content
+        block content
 
     block footer
-      include ../partials/footer
+        include ../partials/footer
 
     block footer-scripts

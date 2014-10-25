@@ -9,6 +9,11 @@ var
     logger        = require('morgan'),
     cookieParser  = require('cookie-parser'),
     bodyParser    = require('body-parser'),
+    photos        = require('./app/assets/files/photos.json')
+;
+
+
+var
     app           = express(),
     server        = http.createServer()
 ;
@@ -26,7 +31,9 @@ var
         css:          root + '/css',
         img:          root + '/img',
         fonts:        root + '/fonts',
-        js:           root + '/js'
+        js:           root + '/js',
+        lib:          root + '/lib',
+        files:        root + '/files'
     },
     pathsJSON         = JSON.stringify(paths),
     defaults          = {
@@ -75,47 +82,48 @@ server.listen(app.get('port'));
 // Home
 app.get('/', function (request, response) {
   response.render('pages/index', {
-      paths: paths,
-      title: defaults.title,
-      description: defaults.description,
-      keywords: defaults.keywords,
-      shareImage: defaults.shareImage,
-      bodyClass: 'home'
+        paths:          paths,
+        title:          defaults.title,
+        description:    defaults.description,
+        keywords:       defaults.keywords,
+        shareImage:     defaults.shareImage,
+        bodyClass:      'home'
   });
 });
 
 // FAQ
 app.get('/faq', function (request, response) {
   response.render('pages/faq', {
-      paths: paths,
-      title: 'Frequently Asked Questions',
-      description: defaults.description,
-      keywords: defaults.keywords,
-      shareImage: defaults.shareImage,
-      bodyClass: 'faq'
+        paths:          paths,
+        title:          'Frequently Asked Questions',
+        description:    defaults.description,
+        keywords:       defaults.keywords,
+        shareImage:     defaults.shareImage,
+        bodyClass:      'faq'
   });
 });
 
 // Tack
 app.get('/tack', function (request, response) {
   response.render('pages/tack', {
-      paths: paths,
-      title: 'Custom Handmade Tack by Arabian Fancy',
-      description: defaults.description,
-      keywords: defaults.keywords,
-      shareImage: defaults.shareImage,
-      bodyClass: 'tack'
+        paths:          paths,
+        title:          'Custom Handmade Tack by Arabian Fancy',
+        description:    defaults.description,
+        keywords:       defaults.keywords,
+        shareImage:     defaults.shareImage,
+        bodyClass:      'tack',
+        photos:         photos
   });
 });
 
 // Contact
 app.get('/contact', function (request, response) {
   response.render('pages/contact', {
-      paths: paths,
-      title: 'Contact Arabian Fancy',
-      description: defaults.description,
-      keywords: defaults.keywords,
-      shareImage: defaults.shareImage,
-      bodyClass: 'contact'
+        paths:          paths,
+        title:          'Contact Arabian Fancy',
+        description:    defaults.description,
+        keywords:       defaults.keywords,
+        shareImage:     defaults.shareImage,
+        bodyClass:      'contact'
   });
 });

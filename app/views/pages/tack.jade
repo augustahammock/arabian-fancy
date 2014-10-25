@@ -1,11 +1,23 @@
 extends ../layouts/main
 
+block append styles
+    link(rel='stylesheet', href='#{paths.lib}/fancybox/source/jquery.fancybox.css')
+    link(rel='stylesheet', href='#{paths.lib}/fancybox/source/helpers/jquery.fancybox-thumbs.css')
+
+
 block append footer-scripts
+    //- Base libraries
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
-    script(src='#{paths.js}/lib/fancybox/source/jquery.fancybox.pack.js')
-    script(src='#{paths.js}/lib/jquery.mixitup.js')
+
+    //- Interaction libraries and their dependencies
+    script(src='#{paths.lib}/fancybox/source/jquery.fancybox.pack.js')
+    script(src='#{paths.lib}/fancybox/source/helpers/jquery.fancybox-thumbs.js')
+    script(src='#{paths.lib}/mixitup/jquery.mixitup.js')
+
+
+    //- Page-specific scripts
     script(src='#{paths.js}/tack.js')
-    script(src='#{paths.js}/gallery.js')
+
 
 block content
 
@@ -42,4 +54,28 @@ block content
 
 
 
-        section.tack-images
+        section.tackContainer
+
+            //- Loop through all of the tack items and render them on the tack grid
+
+            each item, i in photos.photos
+
+                div(class='mix #{item.colors}')
+                    a.fancybox(
+                            rel='group',
+                            href='#{paths.img}/tack/arabian-fancy-tack_#{item.id}.jpg',
+                            title='test title?')
+                        img(src='#{paths.img}/tack/arabian-fancy-tack_#{item.id}.jpg', alt='Tack by Arabian Fancy')
+
+
+            div
+                a.fancybox(rel='group', href='#{paths.img}/tack/arabian-fancy-tack_1.jpg')
+                    img(src='#{paths.img}/tack/arabian-fancy-tack_1.jpg', alt='Tack by Arabian Fancy')
+
+            div
+                a.fancybox(rel='group', href='#{paths.img}/tack/arabian-fancy-tack_2.jpg')
+                    img(src='#{paths.img}/tack/arabian-fancy-tack_2.jpg', alt='Tack by Arabian Fancy')
+
+            div
+                a.fancybox(rel='group', href='#{paths.img}/tack/arabian-fancy-tack_3.jpg')
+                    img(src='#{paths.img}/tack/arabian-fancy-tack_3.jpg', alt='Tack by Arabian Fancy')

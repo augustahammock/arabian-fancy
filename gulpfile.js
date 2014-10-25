@@ -42,7 +42,8 @@ var sources = {
   styles      : path.join(appDir, '/styles'),
   scripts     : path.join(appDir, '/scripts'),
   fonts       : path.join(appDir, '/assets/fonts/**/*'),
-  images      : path.join(appDir, '/assets/img/**/*')
+  images      : path.join(appDir, '/assets/img/**/*'),
+  files       : path.join(appDir, '/assets/files/**/*')
 };
 
 
@@ -64,7 +65,8 @@ var destinations = {
   styles      : path.join(staticDir, '/css'),
   scripts     : path.join(staticDir, '/js'),
   fonts       : path.join(staticDir, '/fonts'),
-  images      : path.join(staticDir, '/img')
+  images      : path.join(staticDir, '/img'),
+  files       : path.join(staticDir, '/files')
 };
 
 
@@ -78,6 +80,9 @@ gulp.task('assets', function() {
 
   gulp.src(sources.images)
     .pipe(gulp.dest(destinations.images));
+
+  gulp.src(sources.files)
+    .pipe(gulp.dest(destinations.files));
 
 });
 
@@ -112,7 +117,7 @@ gulp.task('stylus', function() {
 // Javascript task
 //---------------------------------------------------------
 gulp.task('scripts', function() {
-  return gulp.src(sources.scripts)
+  return gulp.src(files.scripts)
     .pipe(jshint())
     .pipe(jshint.reporter(stylish))
     .pipe(plumber({
