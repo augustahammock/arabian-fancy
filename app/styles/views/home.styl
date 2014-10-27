@@ -28,12 +28,23 @@ body.home
         overflow hidden
 
     .hero
-        background black url(../img/home/hero.jpg) no-repeat -200px 47%
-        background-size auto 186%
         height 500px
+        background $black
         margin-bottom 30px
+        overflow hidden
+
+        .center
+            position relative
+            height 100%
+            overflow visible
+
+    .heroImage
+        position absolute
+        top -180px
+        left -250px
 
     .colorSelector
+        position relative
         float right
         width 415px
         text-align center
