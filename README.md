@@ -14,7 +14,7 @@ This project is an in-progress app built for Gina Dupree of Arabian Fancy Tack t
 
 Dynamic data is contained in JSON files and is rendered via Jade templates. (No AJAX calls in the JavaScript files!)
 
-This project also makes use of client-side sessionStorage for light data carraige throughout the app.
+This project also makes use of client-side sessionStorage for light data carriage throughout the app.
 
 ---
 
