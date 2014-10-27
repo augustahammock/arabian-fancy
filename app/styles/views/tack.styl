@@ -7,23 +7,37 @@ body.tack
     .page-wrap > .center
         overflow hidden
 
-    .contactGina
-        text-align center
-        margin-bottom 30px
+
+    // Utilities area
+
+    .utilities
+        float left
+        width 25%
+        background $cream-lighter
+        padding 20px
+
+        p
+            color $beige-dark
+
+
+    // Color Filters
 
     .colorFilters
-        background $mist
         overflow hidden
         text-align center
-        margin-bottom 30px
+        border-bottom 2px solid $cream-light
+        margin-bottom 20px
+        padding-bottom 20px
 
         > *
             vertical-align top
 
         p
             display inline-block
-            font-size 16px
-            padding 10px 15px 10px 0
+            width 100%
+            text-align left
+            font-size 15px
+            padding 0 15px 10px 0
 
         ul
             display inline-block
@@ -34,53 +48,61 @@ body.tack
             li
                 display block
                 float left
-                font-size 16px
-                color $cranberry
-                padding 10px 15px
+                font-size 12px
+                text-transform uppercase
+                color $cranberry-light
+                border 1px solid #dcd4cc
+                margin 0 2px 4px
+                padding 7px 12px
                 cursor pointer
+                transition all .2s
 
                 &:hover
-                    background $cranberry
-                    color $white
+                    border 1px solid $cranberry-light
                     transition all .2s
 
                 &.active
-                    background $cranberry
-                    color $white
+                    border 1px solid $cranberry-light
 
 
     // My Favorites
 
-    .utilities
-        float left
-        width 25%
-        background $cream-lighter
-        padding 20px
-
-        h3
-            color $cranberry-dark
-
-        p
-            color $beige-dark
+    .favorites
+        border-bottom 2px solid $cream-light
+        margin-bottom 25px
+        padding-bottom 30px
 
         .button
-            display block
-            font-size 16px
+            width 100%
             text-align center
-            padding 10px 15px
 
     .favoritesList
         list-style none
         background $cream-light
-        margin 20px 0
-        padding 10px
+        margin 0 0 20px
+        padding 10px 10px 8px
 
         li
+            position relative
             display inline-block
-            width 47%
-            background red
-            margin 0 1% 1%
+            width 48%
+            height 100px
+            margin 0 1% 2%
             vertical-align top
+            overflow hidden
+
+            img
+                width 100%
+
+        li.noFavoritesPrompt
+            display none
+            width 100%
+            text-align center
+
+        &.noFavorites
+            .noFavoritesPrompt
+                display block
+                height auto
 
     .misc
         background url(../img/global/emphasisFlourish.png) 0 center no-repeat
@@ -95,11 +117,15 @@ body.tack
 
         > div
             display none
+            position relative
             vertical-align top
             width 22.5%
             height 177px
             margin 0 1.25% 21px
             overflow hidden
+
+            a
+                display block
 
             img
                 width 100%

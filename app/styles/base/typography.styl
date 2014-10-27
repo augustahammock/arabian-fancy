@@ -41,50 +41,52 @@
 
 h1
     font-family $serifiqo
-    font-size 3rem
+    font-size 44px
     font-weight lighter
 
 h2
     font-family $monteCarlo
-    font-size 2rem
+    font-size 30px
     color $goldenrod
     font-weight lighter
 
 h3
     font-family $serifiqo
-    font-size 1.6rem
-    line-height 2rem
+    font-size 22px
+    line-height 34px
     font-weight lighter
     color $goldenrod
     margin 0 0 8px
 
 p
-    font-size .9rem
-    line-height 1.3rem
+    font-size 15px
+    line-height 21px
     margin 0
 
-a, a link, a visited
-    color $cranberry
+a,
+a:link,
+a:visited
+    color $cranberry-light
     text-decoration none
-    transition all .2s
+    transition color .2s
 
-  & hover
-    color $goldenrod
-    transition all .2s
+    .global-nav &
+        color white
 
-  .global-nav &
-    color white
-
-    & hover
+    .global-nav &:hover
         color $cream
+
+a:hover
+    color $cranberry
+    transition color .2s
 
 .page-title
     text-align center
     margin 40px 0 30px
 
 .photo-credits
-    font-size .7rem
-    line-height 1rem
+    font-size 12rem
+    line-height 16rem
     color $mist-dark
 
 .small

@@ -8,11 +8,66 @@ a.button:link,
 a.button:visited
     display inline-block
     font-family $livory
-    font-style italic
+    font-size 13px
+    text-transform uppercase
     color $white
     background $cranberry
-    padding 5px 10px
+    padding 7px 12px
 
 a.button:hover
     background $cranberry-dark
 
+
+// Favorite 'heart' buttons
+
+.button--addFavorite,
+.button--removeFavorite
+    position absolute
+    top 0
+    right 0
+    color $white
+    font-size 20px
+    background rgba(0, 0, 0, .8)
+    opacity 0
+    cursor pointer
+    transition opacity .2s
+
+    .tackContainer div:hover &,
+    .favoritesItem:hover &
+        opacity 1
+        transition opacity .2s
+
+    &:hover
+        .fa-heart
+            opacity 1
+            transition opacity .2s
+
+    .fa
+        position absolute
+        top 11px
+        right 10px
+
+    .fa-heart
+        opacity 0
+        transition opacity .2s
+
+    &.inFavorites
+        opacity 1
+
+        .fa-heart
+            opacity 1
+
+
+// Favorite 'x' button
+
+.button--removeFavorite
+    width 30px
+    height 30px
+    font-size 16px
+
+    .favoriteItem:hover &
+        opacity 1
+
+    .fa
+        top 7px
+        right 9px

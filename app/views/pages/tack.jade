@@ -36,14 +36,17 @@ block content
                     li.filter(data-filter='all') All horses
                     li.filter(data-filter='.grey, .all') Greys
                     li.filter(data-filter='.bay, .all') Bays
-                    li.filter(data-filter='.chestnut, .all') Chestnut
+                    li.filter(data-filter='.chestnut, .all') Chestnuts
                     li.filter(data-filter='.black, .all') Blacks
 
             article.favorites
                 h3 My Favorites
-                p.noFavorites Add a design you like by clicking its <i class='fa fa-heart-o'></i> symbol.
 
-                ul.favoritesList
+                ul.favoritesList.noFavorites
+                    li.noFavoritesPrompt
+                        p.small
+                            | You haven't chosen any favorites yet.<br>
+                            | Click a design's <i class='fa fa-heart-o'></i> symbol to add it here!
 
                 p: a.button.button--orderFavorites(href='#{paths.root}/contact') Order tack like my Favorites
 
@@ -60,22 +63,14 @@ block content
 
             each item, i in photos.photos
 
-                div(class='mix #{item.colors}')
+                div(class='tackItem mix #{item.colors}', data-id='#{item.id}')
                     a.fancybox(
                             rel='group',
                             href='#{paths.img}/tack/arabian-fancy-tack_#{item.id}.jpg',
                             title='test title?')
+
                         img(src='#{paths.img}/tack/arabian-fancy-tack_#{item.id}.jpg', alt='Tack by Arabian Fancy')
 
-
-            div
-                a.fancybox(rel='group', href='#{paths.img}/tack/arabian-fancy-tack_1.jpg')
-                    img(src='#{paths.img}/tack/arabian-fancy-tack_1.jpg', alt='Tack by Arabian Fancy')
-
-            div
-                a.fancybox(rel='group', href='#{paths.img}/tack/arabian-fancy-tack_2.jpg')
-                    img(src='#{paths.img}/tack/arabian-fancy-tack_2.jpg', alt='Tack by Arabian Fancy')
-
-            div
-                a.fancybox(rel='group', href='#{paths.img}/tack/arabian-fancy-tack_3.jpg')
-                    img(src='#{paths.img}/tack/arabian-fancy-tack_3.jpg', alt='Tack by Arabian Fancy')
+                    .button--addFavorite
+                        i.fa.fa-heart-o
+                        i.fa.fa-heart
