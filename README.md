@@ -21,7 +21,7 @@ This project also makes use of client-side sessionStorage for light data carraig
 Run this project locally
 ----
 
-Simply `git clone` this project locally, `cd` into the `arabian-fancy` folder.
+Simply `git clone` this project locally and `cd` into the `arabian-fancy` folder.
 
 Then, run the following:
 
