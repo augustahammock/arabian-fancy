@@ -38,4 +38,5 @@ To-Dos
 ----
 
   - Finish refactoring contact form logic (I'd like to make this more robust on both client-side and server-side)
+  - Implement new contact email template
   - Implement responsive styles
