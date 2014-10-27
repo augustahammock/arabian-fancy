@@ -1,6 +1,41 @@
 extends ../layouts/main
 
+block append footer-scripts
+    //- Base libraries
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+
+    //- Page-specific scripts
+    script(src='#{paths.js}/contact.js')
+
 block content
 
     .center
         h2.page-title Contact Arabian Fancy
+
+        section.contactFormContainer
+
+            .inputGroup.name.required
+                label(for='name') Name
+                input(id='name', name='name', type='text')
+
+            .inputGroup.email.required
+                label(for='email') Email
+                input(id='email', name='email', type='text')
+
+            .inputGroup.interest.required
+                p.label(for='interest') Interest
+                ul.outline
+                    li.interestOption.active(data-value='order') Order
+                    li.interestOption(data-value='question') Question
+                    li.interestOption(data-value='other') Other
+
+            .inputGroup.message.required
+                label(for='message') Message
+                textarea(id='message', name='message')
+
+            .favoritesGroup.noFavorites
+                p.label Favorites
+                ul.favoritesList
+
+            .submitGroup
+                a.button.button--contactSubmit(href='#') Contact Arabian Fancy

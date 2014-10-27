@@ -1,0 +1,1 @@
+$(document).ready(function(){var o=$(".selector"),t=$(".colorImages"),a=function(){var o=$(this),a=o.attr("data-color"),e='[data-color="'+a+'"]',c=t.find(e);t.find("img").removeClass("active"),c.addClass("active")},e=function(){var o=$(this),t=o.attr("data-color");sessionStorage.setItem("color",t),window.location.href="tack"};o.on("mouseenter",a),o.on("click",e)});

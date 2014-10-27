@@ -16,6 +16,16 @@ body.tack
         background $cream-lighter
         padding 20px
 
+        > article
+            border-bottom 2px solid $cream-light
+            margin-bottom 15px
+            padding-bottom 25px
+
+        > article:last-child
+            border-bottom none
+            margin-bottom 0
+            padding-bottom 0
+
         p
             color $beige-dark
 
@@ -25,9 +35,6 @@ body.tack
     .colorFilters
         overflow hidden
         text-align center
-        border-bottom 2px solid $cream-light
-        margin-bottom 20px
-        padding-bottom 20px
 
         > *
             vertical-align top
@@ -39,38 +46,13 @@ body.tack
             font-size 15px
             padding 0 15px 10px 0
 
-        ul
-            display inline-block
-            margin 0
-            padding 0
-            overflow hidden
-
-            li
-                display block
-                float left
-                font-size 12px
-                text-transform uppercase
-                color $cranberry-light
-                border 1px solid #dcd4cc
-                margin 0 2px 4px
-                padding 7px 12px
-                cursor pointer
-                transition all .2s
-
-                &:hover
-                    border 1px solid $cranberry-light
-                    transition all .2s
-
-                &.active
-                    border 1px solid $cranberry-light
-
 
     // My Favorites
 
     .favorites
         border-bottom 2px solid $cream-light
-        margin-bottom 25px
-        padding-bottom 30px
+        // margin-bottom 25px
+        // padding-bottom 30px
 
         .button
             width 100%
@@ -80,7 +62,7 @@ body.tack
         list-style none
         background $cream-light
         margin 0 0 20px
-        padding 10px 10px 8px
+        padding 10px 10px 6px
 
         li
             position relative
@@ -104,10 +86,17 @@ body.tack
                 display block
                 height auto
 
-    .misc
-        background url(../img/global/emphasisFlourish.png) 0 center no-repeat
-        margin-top 40px
-        padding-left 40px
+    .pricing
+        padding-top 8px
+
+        p
+            margin-bottom 15px
+
+        p:last-child
+            margin-bottom 0
+
+
+    // Tack grid
 
     .tackContainer
         float right
@@ -115,18 +104,36 @@ body.tack
         overflow hidden
         margin 0 -1.25%
 
-        > div
-            display none
-            position relative
-            vertical-align top
-            width 22.5%
-            height 177px
-            margin 0 1.25% 21px
-            overflow hidden
+    .tackItem
+        display none
+        position relative
+        vertical-align top
+        width 22.5%
+        height 177px
+        margin 0 1.25% 21px
+        overflow hidden
 
-            a
-                display block
+        a
+            display block
 
-            img
-                width 100%
-                background $cranberry
+        img
+            width 100%
+            background $cranberry
+
+    .meta
+        position absolute
+        top 0
+        left 0
+        right 0
+        min-height 40px
+        background rgba(0, 0, 0, .6)
+        padding 12px 12px
+        opacity 0
+
+    .price
+        font-size 15px
+        color $white
+
+    .tackItem:hover .meta
+        opacity 1
+        transition opacity .2s

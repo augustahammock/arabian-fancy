@@ -1,0 +1,1 @@
+$(document).ready(function(){{var o,a=$(".favoritesGroup"),t=$(".favoritesList");$(".button--contactSubmit")}sessionStorage.getItem("favoritesIDs")&&(o=JSON.parse(sessionStorage.favoritesIDs),a.removeClass("noFavorites"),console.log(o),$.each(o,function(o,a){t.append('<li><img src="img/tack/arabian-fancy-tack_'+a+'.jpg"></li>')})),console.log("contact page yay!")});

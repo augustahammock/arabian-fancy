@@ -32,7 +32,7 @@ block content
 
             article.colorFilters
                 p Show tack that complements:
-                ul
+                ul.outline
                     li.filter(data-filter='all') All horses
                     li.filter(data-filter='.grey, .all') Greys
                     li.filter(data-filter='.bay, .all') Bays
@@ -48,9 +48,12 @@ block content
                             | You haven't chosen any favorites yet.<br>
                             | Click a design's <i class='fa fa-heart-o'></i> symbol to add it here!
 
-                p: a.button.button--orderFavorites(href='#{paths.root}/contact') Order tack like my Favorites
+                p: a.button.button--orderFavorites(href='#') Order tack like my Favorites
 
-            article
+            article.pricing
+                h4 Pricing &amp; Availability
+                p.small
+                    | All prices are estimates and are subject to change based on item availability, modifications, and complexity. Please note that some items are one-of-a-kind pieces that cannot be reproduced.
                 p.small
                     | Have a question or unique request?
                     | See the <a href='#{paths.root}/faq'>FAQ</a> or <a href='#{paths.root}/contact'>contact Gina</a> for more information.
@@ -66,11 +69,13 @@ block content
                 div(class='tackItem mix #{item.colors}', data-id='#{item.id}')
                     a.fancybox(
                             rel='group',
-                            href='#{paths.img}/tack/arabian-fancy-tack_#{item.id}.jpg',
-                            title='test title?')
+                            href='#{paths.img}/tack/arabian-fancy-tack_#{item.id}.jpg')
 
                         img(src='#{paths.img}/tack/arabian-fancy-tack_#{item.id}.jpg', alt='Tack by Arabian Fancy')
 
-                    .button--addFavorite
-                        i.fa.fa-heart-o
-                        i.fa.fa-heart
+                    .meta
+                        span.price #{item.price}
+
+                        span.button--addFavorite
+                            i.fa.fa-heart-o
+                            i.fa.fa-heart

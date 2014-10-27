@@ -3,62 +3,74 @@
         {
             "id":           1,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$1,250 (set)"
         },
         {
             "id":           2,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$250 (halter)"
         },
         {
             "id":           3,
             "photographer": null,
-            "colors":       "chestnut black grey"
+            "colors":       "chestnut black grey",
+            "price":        "$250 (halter)"
         },
         {
             "id":           4,
             "photographer": null,
-            "colors":       "bay grey black"
+            "colors":       "bay grey black",
+            "price":        "$300 (halter)"
         },
         {
             "id":           5,
             "photographer": null,
-            "colors":       "bay grey black"
+            "colors":       "bay grey black",
+            "price":        "$750 (set)"
         },
         {
             "id":           6,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$1,250 (set)"
         },
         {
             "id":           7,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$275 (halter)"
         },
         {
             "id":           8,
             "photographer": null,
-            "colors":       "black grey"
+            "colors":       "black grey",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           9,
             "photographer": null,
-            "colors":       "black grey"
+            "colors":       "black grey",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           10,
             "photographer": null,
-            "colors":       "bay grey black"
+            "colors":       "bay grey black",
+            "price":        "$750 (set)"
         },
         {
             "id":           11,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$750 (set)"
         },
         {
             "id":           12,
             "photographer": null,
-            "colors":       "black grey bay"
+            "colors":       "black grey bay",
+            "price":        "$275 (halter)"
         },
         {
             "id":           13,
@@ -68,22 +80,26 @@
         {
             "id":           14,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           15,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           16,
             "photographer": null,
-            "colors":       "chestnut bay grey"
+            "colors":       "chestnut bay grey",
+            "price":        "$225 (halter)"
         },
         {
             "id":           17,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           18,
@@ -93,107 +109,128 @@
         {
             "id":           19,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           20,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           21,
             "photographer": null,
-            "colors":       "grey"
+            "colors":       "grey",
+            "price":        "$750 (set)"
         },
         {
             "id":           22,
             "photographer": null,
-            "colors":       "chestnut black grey"
+            "colors":       "chestnut black grey",
+            "price":        "$750 (set)"
         },
         {
             "id":           23,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$225 (halter)"
         },
         {
             "id":           24,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$750 (set)"
         },
         {
             "id":           25,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           26,
             "photographer": null,
-            "colors":       "bay black grey"
+            "colors":       "bay black grey",
+            "price":        "$300 (halter)"
         },
         {
             "id":           27,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           28,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$225 (halter)"
         },
         {
             "id":           29,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$150 (browband)"
         },
         {
             "id":           30,
             "photographer": null,
-            "colors":       "bay black grey"
+            "colors":       "bay black grey",
+            "price":        "$350 and up (halter)"
         },
         {
             "id":           31,
             "photographer": null,
-            "colors":       "bay black grey"
+            "colors":       "bay black grey",
+            "price":        "$150 browband"
         },
         {
             "id":           32,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$150 (browband)"
         },
         {
             "id":           33,
             "photographer": null,
-            "colors":       "black grey"
+            "colors":       "black grey",
+            "price":        "$275 (halter)"
         },
         {
             "id":           34,
             "photographer": null,
-            "colors":       "chestnut black grey"
+            "colors":       "chestnut black grey",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           35,
             "photographer": null,
-            "colors":       "chestnut black grey"
+            "colors":       "chestnut black grey",
+            "price":        "$950 (set)"
         },
         {
             "id":           36,
             "photographer": null,
-            "colors":       "chestnut black grey"
+            "colors":       "chestnut black grey",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           37,
             "photographer": null,
-            "colors":       "bay black grey"
+            "colors":       "bay black grey",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           38,
             "photographer": null,
-            "colors":       "chestnut black grey"
+            "colors":       "chestnut black grey",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           39,
             "photographer": null,
-            "colors":       "bay black grey"
+            "colors":       "bay black grey",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           40,
@@ -203,17 +240,20 @@
         {
             "id":           41,
             "photographer": null,
-            "colors":       "chestnut black grey"
+            "colors":       "chestnut black grey",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           42,
             "photographer": null,
-            "colors":       "bay black grey"
+            "colors":       "bay black grey",
+            "price":        "$350 and up (halter)"
         },
         {
             "id":           43,
             "photographer": null,
-            "colors":       "black grey"
+            "colors":       "black grey",
+            "price":        "$250 (halter)"
         },
         {
             "id":           45,
@@ -223,7 +263,8 @@
         {
             "id":           44,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           46,
@@ -238,57 +279,68 @@
         {
             "id":           48,
             "photographer": null,
-            "colors":       "black grey"
+            "colors":       "black grey",
+            "price":        "$300 and up (halter)"
         },
         {
             "id":           49,
             "photographer": null,
-            "colors":       "bay black grey"
+            "colors":       "bay black grey",
+            "price":        "$350 and up (halter)"
         },
         {
             "id":           50,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$250 and up (halter)"
         },
         {
             "id":           51,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$250 and up (halter)"
         },
         {
             "id":           52,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$350 and up (halter)"
         },
         {
             "id":           53,
             "photographer": null,
-            "colors":       "black grey"
+            "colors":       "black grey",
+            "price":        "$350 and up (halter)"
         },
         {
             "id":           54,
             "photographer": null,
-            "colors":       "chestnut black grey"
+            "colors":       "chestnut black grey",
+            "price":        "$350 and up (halter)"
         },
         {
             "id":           55,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$350 and up (halter)"
         },
         {
             "id":           56,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$225 (halter)"
         },
         {
             "id":           57,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           58,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           59,
@@ -298,42 +350,50 @@
         {
             "id":           60,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$350 and up (halter)"
         },
         {
             "id":           61,
             "photographer": null,
-            "colors":       "black grey"
+            "colors":       "black grey",
+            "price":        "$275 (halter)"
         },
         {
             "id":           62,
             "photographer": null,
-            "colors":       "bay black grey"
+            "colors":       "bay black grey",
+            "price":        "$200 (halter)"
         },
         {
             "id":           63,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           64,
             "photographer": null,
-            "colors":       "bay black grey"
+            "colors":       "bay black grey",
+            "price":        "$250 (halter)"
         },
         {
             "id":           65,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$250 (halter)"
         },
         {
             "id":           66,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$275 (halter)"
         },
         {
             "id":           67,
             "photographer": null,
-            "colors":       "black grey"
+            "colors":       "black grey",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           68,
@@ -343,42 +403,50 @@
         {
             "id":           69,
             "photographer": null,
-            "colors":       "bay black grey"
+            "colors":       "bay black grey",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           70,
             "photographer": null,
-            "colors":       "black grey"
+            "colors":       "black grey",
+            "price":        "$300 and up (halter)"
         },
         {
             "id":           71,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$275 (halter)"
         },
         {
             "id":           72,
             "photographer": null,
-            "colors":       "bay black grey"
+            "colors":       "bay black grey",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           73,
             "photographer": null,
-            "colors":       "chestnut black grey"
+            "colors":       "chestnut black grey",
+            "price":        "Ask for pricing"
         },
         {
             "id":           74,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$250 (halter)"
         },
         {
             "id":           75,
             "photographer": null,
-            "colors":       "chestnut grey"
+            "colors":       "chestnut grey",
+            "price":        "$1,500 (set)"
         },
         {
             "id":           76,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$300 (halter)"
         },
         {
             "id":           77,
@@ -388,17 +456,20 @@
         {
             "id":           78,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$275 (halter)"
         },
         {
             "id":           79,
             "photographer": null,
-            "colors":       "all"
+            "colors":       "all",
+            "price":        "$350 (halter)"
         },
         {
             "id":           80,
             "photographer": null,
-            "colors":       "grey"
+            "colors":       "grey",
+            "price":        "$300 (halter)"
         },
         {
             "id":           81,

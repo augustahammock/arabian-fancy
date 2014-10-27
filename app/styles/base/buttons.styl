@@ -12,10 +12,12 @@ a.button:visited
     text-transform uppercase
     color $white
     background $cranberry
-    padding 7px 12px
+    padding 8px 12px 6px
+    transition background .2s
 
 a.button:hover
     background $cranberry-dark
+    transition background .2s
 
 
 // Favorite 'heart' buttons
@@ -25,17 +27,18 @@ a.button:hover
     position absolute
     top 0
     right 0
+    width 40px
+    height 40px
     color $white
     font-size 20px
-    background rgba(0, 0, 0, .8)
-    opacity 0
+    //opacity 1
     cursor pointer
     transition opacity .2s
 
-    .tackContainer div:hover &,
-    .favoritesItem:hover &
-        opacity 1
-        transition opacity .2s
+    // .tackContainer div:hover &,
+    // .favoritesItem:hover &
+    //     opacity 1
+    //     transition opacity .2s
 
     &:hover
         .fa-heart
@@ -64,10 +67,12 @@ a.button:hover
     width 30px
     height 30px
     font-size 16px
+    background rgba(0, 0, 0, .6)
+    opacity 0
 
     .favoriteItem:hover &
         opacity 1
 
     .fa
         top 7px
-        right 9px
+        right 8px

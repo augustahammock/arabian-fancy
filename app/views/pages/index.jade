@@ -1,18 +1,31 @@
 extends ../layouts/main
 
+block append footer-scripts
+    //- Base libraries
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+
+    //- Page-specific scripts
+    script(src='#{paths.js}/home.js')
+
 block content
 
     section.hero
-        //- .center
-        //-     p Show tack that compliments <span class="color">grey</span> Arabians.
-        //-     aside.color-viewer
-        //-         img(src='#{paths.img}/home/colorViewer--grey.png' alt='Grey Arabians')
-        //-         img(src='#{paths.img}/home/colorViewer--bay.png' alt='Bay Arabians')
-        //-         img(src='#{paths.img}/home/colorViewer--chestnut.png' alt='Chestnut Arabians')
-        //-         img(src='#{paths.img}/home/colorViewer--black.png' alt='Black Arabians')
-        //-     p
-        //-         a(href="#{paths.root}/tack", class="button button--viewFilteredTack") View Tack
-        //-         a(href="#{paths.root}/tack", class="button button--viewAllTack") View all tack
+        .center
+            aside.colorSelector
+                p Show tack that complements:
+                ul.outline
+                    li.selector(data-color='all') All horses
+                    li.selector(data-color='grey') Greys
+                    li.selector(data-color='bay') Bays
+                    li.selector(data-color='chestnut') Chestnuts
+                    li.selector(data-color='black') Blacks
+
+                .colorImages
+                    img(data-color='all', src='#{paths.img}/home/colorSelector--all.png', class="colorSelector--all active")
+                    img(data-color='grey', src='#{paths.img}/home/colorSelector--grey.png', class="colorSelector--grey")
+                    img(data-color='bay', src='#{paths.img}/home/colorSelector--bay.png', class="colorSelector--bay")
+                    img(data-color='chestnut', src='#{paths.img}/home/colorSelector--chestnut.png', class="colorSelector--chestnut")
+                    img(data-color='black', src='#{paths.img}/home/colorSelector--black.png', class="colorSelector--black")
 
     .center
         section.intro

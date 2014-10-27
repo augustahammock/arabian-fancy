@@ -27,3 +27,28 @@ body
 
     body.home &
         padding 0
+
+.outline
+    display inline-block
+    margin 0
+    padding 0
+    overflow hidden
+
+    li
+        display block
+        float left
+        font-size 12px
+        text-transform uppercase
+        color $cranberry-light
+        border 1px solid #dcd4cc
+        margin 0 2px 4px
+        padding 7px 12px
+        cursor pointer
+        transition all .2s
+
+        &:hover
+            border 1px solid $cranberry-light
+            transition all .2s
+
+        &.active
+            border 1px solid $cranberry-light
