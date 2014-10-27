@@ -3,9 +3,152 @@ $(document).ready(function () {
     var
         favoritesContainer  = $('.favoritesGroup'),
         favoritesList       = $('.favoritesList'),
+        inputGroups         = $('.inputGroup'),
         contactSubmit       = $('.button--contactSubmit'),
-        favorites
+        favorites,
+        Validator
     ;
+
+
+
+    // Validate the entire form when contactSubmit is clicked
+
+    var validateForm = function () {
+
+        // Loop through each .inputGroup and validate its child field according to the .inputGroup's 'data-validate' attribute
+        $.each(inputGroups, function (i, item) {
+            var
+                inputGroup  = $(item)[0],
+                field       = $(inputGroup).find('input, textarea, ul.options'),
+                validateAs  = inputGroup.attributes['data-validateAs'].value,
+                required    = $(inputGroup).hasClass('required'),
+                errorList   = $(inputGroup).find('.errors'),
+                data = {
+                    inputGroup: inputGroup,
+                    validateAs: validateAs,
+                    required:   required,
+                    errorList:  errorList
+                }
+            ;
+
+
+            // If the field type is a <ul>, asign its available options to data.options
+            // and assign its selected option to data.value
+            if (field[0].tagName === 'UL') {
+                var
+                    options         = $(field).find('li'),
+                    optionsList     = [],
+                    optionValue
+                ;
+
+                $.each(options, function (i, option) {
+                    optionValue = $(option)[0].innerHTML;
+                    optionsList.push(optionValue)
+                });
+
+                data.value      = $(field).find('.active')[0].innerHTML;
+                data.options    = optionsList;
+            
+            // If the field type is an <input> or <textarea>, assign its value to data.value
+            } else {
+                data.value = field[0].value;
+            }
+
+            validate(data);
+        });
+
+        var errors = $('.invalid');
+
+        //console.log(errors);
+    }
+
+
+
+    // Validate a single .inputGroup and its child field item
+
+    var validateItem = function (e) {
+        var
+            inputGroup      = $(e.currentTarget),
+            value           = inputGroup.find('input, textarea, ul.options').val(),
+            validateAs      = inputGroup.attr('data-validateAs'),
+            required        = inputGroup.hasClass('required'),
+            errorList       = inputGroup.find('.errors')
+            data = {
+                inputGroup: inputGroup,
+                field:      field,
+                validateAs: validateAs,
+                required:   required,
+                errorList:  errorList
+            }
+        ;
+
+        // Validate an .inputGroup's child field according to the .inputGroup's 'data-validate' attribute
+        validate(data);
+    }
+
+
+
+    // Validate
+    // TODO: Abstract this as a stand-alone object
+
+    var validate = function (data) {
+        console.log(data);
+
+        var
+            errorList       = data.errorList,
+            value           = data.value,
+            validateAs      = data.validateAs,
+            expressions     = {
+                required: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/,  // requires at least one character
+                string: /^[A-z0-9\s\.\,\:\;\!\?\(\)\/\-\'\"]*$/,  // basic string including letters, numbers, and punctuation
+                email: /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/,  // basic email
+                options: []
+            },
+            exp             = expressions[validateAs],
+            required        = data.required,
+            invalidError    = requiredError = errorList.find('.error--invalid'),
+            requiredError
+        ;
+
+        // If the field is required, define the requiredError variable
+        if (required) {
+            requiredError = errorList.find('.error--required');
+
+            // Hide the requiredError if a value is present
+            if (value !== '') {
+                requiredError.hide();
+
+            // Show the requiredError is no value is present
+            } else {
+                data.inputGroup.removeClass('valid');
+                data.inputGroup.addClass('invalid');
+                requiredError.show();
+                invalidError.hide();
+                return false;
+            }
+        
+        // If the field is NOT required and no value is given
+        } else if (!required && value === '') {
+            return false;
+        }
+
+
+        // If the above conditions are met, evaluate the value against the appropriate expression
+
+        // Pass
+        if (exp.test(value)) {
+            data.inputGroup.removeClass('invalid');
+            data.inputGroup.addClass('valid');
+            invalidError.hide();
+
+        // Fail
+        } else {
+            data.inputGroup.removeClass('valid');
+            data.inputGroup.addClass('invalid');
+            invalidError.show();
+        }
+    }
+
 
 
     // If there are favorites in sessionStorage...
@@ -27,4 +170,9 @@ $(document).ready(function () {
             });
         }
     }
+
+
+
+    inputGroups.on('focusout', validateItem);
+    contactSubmit.on('click', validateForm);
 });

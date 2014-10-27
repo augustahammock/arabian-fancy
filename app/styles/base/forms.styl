@@ -4,6 +4,7 @@
 
 .inputGroup,
 .favoritesGroup
+    position relative
     overflow hidden
     margin-bottom 20px
 
@@ -22,9 +23,10 @@ p.label
     font-size 15px
     text-transform uppercase
     color $beige-dark
-    padding 9px 0 7px
+    padding 10px 0 6px
 
 input[type='text'],
+input[type='email'],
 textarea
     display block
     width 75%
@@ -33,9 +35,59 @@ textarea
     line-height 22px
     border 1px solid $cream-light
     outline none
-    padding 8px 12px 7px
+    padding 8px 25px 7px 12px
+    
+    .has-errors &
+        border 1px solid $goldenrod
 
 textarea
     height 100px
     resize vertical
 
+
+// Success messaging
+
+.fa-check
+    display none
+    position absolute
+    top 15px
+    right 10px
+    font-size 10px
+    color green
+
+.fa-times
+    display none
+    position absolute
+    top 15px
+    right 10px
+    font-size 10px
+    color $goldenrod
+
+.valid
+    .fa-check
+        display block
+
+.invalid
+    .fa-times
+        display block
+
+
+// Error messaging
+
+.errors
+    display none
+    width 75%
+    float right
+    background $goldenrod
+    list-style none
+    margin 0
+    padding 0
+    
+    .invalid &
+        display block
+    
+    li
+        display none
+        font-size 12px
+        color $white
+        padding 7px 10px

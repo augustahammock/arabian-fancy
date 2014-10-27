@@ -5,6 +5,7 @@ block append footer-scripts
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
 
     //- Page-specific scripts
+    //- script(src='#{paths.js}/validator.js')
     script(src='#{paths.js}/contact.js')
 
 block content
@@ -14,24 +15,42 @@ block content
 
         section.contactFormContainer
 
-            .inputGroup.name.required
+            .inputGroup.name.required(data-validateAs='string')
                 label(for='name') Name
                 input(id='name', name='name', type='text')
+                i.fa.fa-check
+                i.fa.fa-times
+                ul.errors
+                    li.error--required Please provide your name.
+                    li.error--invalid Please use only letters, numbers, and punctuation.
 
-            .inputGroup.email.required
+            .inputGroup.email.required(data-validateAs='email')
                 label(for='email') Email
-                input(id='email', name='email', type='text')
+                input(id='email', name='email', type='email')
+                i.fa.fa-check
+                i.fa.fa-times
+                ul.errors
+                    li.error--required Please provide your email address.
+                    li.error--invalid Please provide a valid email address (i.e. example@email.com).
 
-            .inputGroup.interest.required
+            .inputGroup.interest.required(data-validateAs='interest')
                 p.label(for='interest') Interest
-                ul.outline
-                    li.interestOption.active(data-value='order') Order
-                    li.interestOption(data-value='question') Question
-                    li.interestOption(data-value='other') Other
+                ul.options.outline
+                    li.active(data-value='order') Order
+                    li(data-value='question') Question
+                    li(data-value='other') Other
+                ul.errors
+                    li.error--required Please provide an interest.
+                    li.error--invalid Please select an interest from the options above.
 
-            .inputGroup.message.required
+            .inputGroup.message.required(data-validateAs='string')
                 label(for='message') Message
                 textarea(id='message', name='message')
+                i.fa.fa-check
+                i.fa.fa-times
+                ul.errors
+                    li.error--required Please provide a message.
+                    li.error--invalid Please use only letters, numbers, and punctuation.
 
             .favoritesGroup.noFavorites
                 p.label Favorites
