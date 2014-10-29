@@ -48,7 +48,7 @@ $(document).ready(function () {
 
                 data.value      = $(field).find('.active')[0].innerHTML;
                 data.options    = optionsList;
-            
+
             // If the field type is an <input> or <textarea>, assign its value to data.value
             } else {
                 data.value = field[0].value;
@@ -126,7 +126,7 @@ $(document).ready(function () {
                 invalidError.hide();
                 return false;
             }
-        
+
         // If the field is NOT required and no value is given
         } else if (!required && value === '') {
             return false;
@@ -173,6 +173,6 @@ $(document).ready(function () {
 
 
 
-    inputGroups.on('focusout', validateItem);
+    inputGroups.on('focus', validateItem);
     contactSubmit.on('click', validateForm);
 });
