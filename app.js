@@ -25,7 +25,7 @@ var
 //---------------------------------------------------------
 
 var
-    root              = 'http://localhost:3000',
+    root              = './',
     paths             = {
         root:         root,
         css:          root + '/css',
