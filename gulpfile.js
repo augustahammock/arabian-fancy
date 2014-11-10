@@ -157,7 +157,8 @@ gulp.task('watch', function() {
 gulp.task('sync', function() {
   sync({
     proxy: 'localhost:9999',
-    debugInfo: false
+    debugInfo: false,
+    open: false
   })
 });
 

@@ -4,9 +4,9 @@ $(document).ready(function () {
         favoritesContainer  = $('.favoritesGroup'),
         favoritesList       = $('.favoritesList'),
         inputGroups         = $('.inputGroup'),
+        optionsLists        = $('.options'),
         contactSubmit       = $('.button--contactSubmit'),
-        favorites,
-        Validator
+        favorites
     ;
 
 
@@ -14,15 +14,14 @@ $(document).ready(function () {
     // Validate the entire form when contactSubmit is clicked
 
     var validateForm = function () {
-
         // Loop through each .inputGroup and validate its child field according to the .inputGroup's 'data-validate' attribute
-        $.each(inputGroups, function (i, item) {
+        $.each( inputGroups, function (i, item) {
             var
-                inputGroup  = $(item)[0],
-                field       = $(inputGroup).find('input, textarea, ul.options'),
-                validateAs  = inputGroup.attributes['data-validateAs'].value,
-                required    = $(inputGroup).hasClass('required'),
-                errorList   = $(inputGroup).find('.errors'),
+                inputGroup  = $($(item)[0]),
+                field       = inputGroup.find('input, textarea, ul.options'),
+                validateAs  = inputGroup.attr('data-validateAs'),
+                required    = inputGroup.hasClass('required'),
+                errorList   = inputGroup.find('.errors'),
                 data = {
                     inputGroup: inputGroup,
                     validateAs: validateAs,
@@ -57,9 +56,29 @@ $(document).ready(function () {
             validate(data);
         });
 
-        var errors = $('.invalid');
+        var errors = $('.invalid').length;
 
-        //console.log(errors);
+        if (errors === 0) {
+            var emailData = {
+                name:           $('.inputGroup.name input').val(),
+                email:          $('.inputGroup.email input').val(),
+                interest:       $('.inputGroup.interest li.active')[0].innerHTML,
+                message:        $('.inputGroup.message textarea').val(),
+                favoritesHTML:  ''
+            }
+
+            if (favorites && favorites.length > 0) {
+                emailData.favoritesHTML = '<h2>Favorite Pieces</h2>';
+
+                $.each(favorites, function (i, favorite) {
+                    emailData.favoritesHTML += '<a href="http://dev.arabianfancy.com/img/tack/arabian-fancy-tack_' + favorite + '.jpg"><img src="http://dev.arabianfancy.com/img/tack/arabian-fancy-tack_' + favorite + '.jpg"></a>'
+                });
+            }
+
+            // console.log(emailData.favoritesHTML);
+            // console.log('- FORM IS VALID', favorites);
+            sendEmail(emailData);
+        }
     }
 
 
@@ -68,14 +87,16 @@ $(document).ready(function () {
 
     var validateItem = function (e) {
         var
-            inputGroup      = $(e.currentTarget),
-            value           = inputGroup.find('input, textarea, ul.options').val(),
+            field           = $(e.currentTarget),
+            value           = field.val(),
+            inputGroup      = field.parent(),
             validateAs      = inputGroup.attr('data-validateAs'),
             required        = inputGroup.hasClass('required'),
             errorList       = inputGroup.find('.errors')
             data = {
                 inputGroup: inputGroup,
                 field:      field,
+                value:      value,
                 validateAs: validateAs,
                 required:   required,
                 errorList:  errorList
@@ -92,7 +113,6 @@ $(document).ready(function () {
     // TODO: Abstract this as a stand-alone object
 
     var validate = function (data) {
-        console.log(data);
 
         var
             errorList       = data.errorList,
@@ -109,6 +129,7 @@ $(document).ready(function () {
             invalidError    = requiredError = errorList.find('.error--invalid'),
             requiredError
         ;
+
 
         // If the field is required, define the requiredError variable
         if (required) {
@@ -135,18 +156,108 @@ $(document).ready(function () {
 
         // If the above conditions are met, evaluate the value against the appropriate expression
 
-        // Pass
-        if (exp.test(value)) {
-            data.inputGroup.removeClass('invalid');
-            data.inputGroup.addClass('valid');
-            invalidError.hide();
+        // If evaluating a non-list
+        if(!data.options){
 
-        // Fail
+            // Pass
+            if (exp.test(value)) {
+                data.inputGroup.removeClass('invalid');
+                data.inputGroup.addClass('valid');
+                invalidError.hide();
+
+            // Fail
+            } else {
+                data.inputGroup.removeClass('valid');
+                data.inputGroup.addClass('invalid');
+                invalidError.show();
+            }
+
+
+        // If evaluating a list
         } else {
-            data.inputGroup.removeClass('valid');
-            data.inputGroup.addClass('invalid');
-            invalidError.show();
+
+            optionValid = $.inArray( data.value, data.options );
+
+            // Pass
+            if (optionValid !== -1) {
+                data.inputGroup.removeClass('invalid');
+                data.inputGroup.addClass('valid');
+                invalidError.hide();
+
+            // Fail
+            } else {
+                data.inputGroup.removeClass('valid');
+                data.inputGroup.addClass('invalid');
+                invalidError.show();
+            }
         }
+    }
+
+
+
+    // Toggle options
+    var toggleOptions = function (e) {
+        var
+            clicked = $(e.currentTarget),
+            list    = clicked.parent(),
+            options = list.find('li')
+        ;
+
+        $.each( options, function (i, option) {
+            $(this).removeClass('active');
+        });
+
+        clicked.addClass('active');
+    }
+
+
+
+    // Send the email!
+    var sendEmail = function (data) {
+
+        $.ajax({
+            type:   'POST',
+            url:    'https://mandrillapp.com/api/1.0/messages/send-template.json',
+            data: {
+                key: 'RlbIXfpr5DzI8fsRNzXILw',
+                template_name: 'arabian-fancy-contact-form',
+                template_content: [
+                    {
+                        name: 'heading',
+                        content: 'You\'ve got a message from ArabianFancy.com!'
+                    },
+                    {
+                        name: 'name',
+                        content: data.name
+                    },
+                    {
+                        name: 'interest',
+                        content: data.interest
+                    },
+                    {
+                        name: 'message',
+                        content: data.message
+                    },
+                    {
+                        name: 'favorites',
+                        content: data.favoritesHTML
+                    }
+                ],
+                message: {
+                    from_email: data.email,
+                    to: [{
+                        email:  'augusta@augustahammock.com',
+                        name:   'Gina Dupree',
+                        type:   'to'
+                    }],
+                    'headers': {
+                        'Reply-To': data.email
+                    },
+                    autotext:   'true',
+                    subject:    'Message from ArabianFancy.com'
+                }
+            }
+        });
     }
 
 
@@ -172,7 +283,7 @@ $(document).ready(function () {
     }
 
 
-
-    inputGroups.on('focus', validateItem);
+    optionsLists.on('click', 'li', toggleOptions);
+    inputGroups.on('blur', 'input, textarea, ul.options', validateItem);
     contactSubmit.on('click', validateForm);
 });

@@ -36,7 +36,7 @@ textarea
     border 1px solid $cream-light
     outline none
     padding 8px 25px 7px 12px
-    
+
     .has-errors &
         border 1px solid $goldenrod
 
@@ -47,29 +47,31 @@ textarea
 
 // Success messaging
 
-.fa-check
-    display none
-    position absolute
-    top 15px
-    right 10px
-    font-size 10px
-    color green
+.contactFormContainer
 
-.fa-times
-    display none
-    position absolute
-    top 15px
-    right 10px
-    font-size 10px
-    color $goldenrod
-
-.valid
     .fa-check
-        display block
+        display none
+        position absolute
+        top 15px
+        right 10px
+        font-size 10px
+        color green
 
-.invalid
     .fa-times
-        display block
+        display none
+        position absolute
+        top 15px
+        right 10px
+        font-size 10px
+        color $goldenrod
+
+    .valid
+        .fa-check
+            display block
+
+    .invalid
+        .fa-times
+            display block
 
 
 // Error messaging
@@ -82,10 +84,10 @@ textarea
     list-style none
     margin 0
     padding 0
-    
+
     .invalid &
         display block
-    
+
     li
         display none
         font-size 12px
