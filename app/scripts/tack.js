@@ -189,6 +189,14 @@ $(document).ready(function () {
         },
         load: {
             filter: defaultFilter
+        },
+        callbacks: {
+            onMixStart: function (state, futureState) {
+                $('.tackLoading').addClass('show');
+            },
+            onMixEnd: function(state) {
+                $('.tackLoading').removeClass('show');
+            }
         }
     });
 

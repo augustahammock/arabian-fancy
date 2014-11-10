@@ -13,6 +13,12 @@ block content
     .center
         h2.page-title Contact Arabian Fancy
 
+        .contactSuccess
+            h3 Message Sent
+            p Thank you for contacting Arabian Fancy!
+            p <a href='https://www.facebook.com/ArabianFancyTack'>'Like' Arabian Fancy on Facebook</a> to see all of the latest designs and news!
+            img(src='#{paths.img}/home/colorSelector--grey.png')
+
         section.contactFormContainer
 
             .inputGroup.name.required(data-validateAs='string')
@@ -57,4 +63,6 @@ block content
                 ul.favoritesList
 
             .submitGroup
-                a.button.button--contactSubmit(href='#') Contact Arabian Fancy
+                a.button.button--contactSubmit(href='#')
+                    | Contact Arabian Fancy
+                    img.spinner(src='#{paths.img}/global/spinner_small.gif')

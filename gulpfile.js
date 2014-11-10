@@ -158,7 +158,9 @@ gulp.task('sync', function() {
   sync({
     proxy: 'localhost:9999',
     debugInfo: false,
-    open: false
+    open: false,
+    browser: 'google chrome',
+    notify: false
   })
 });
 

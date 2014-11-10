@@ -4,6 +4,19 @@
 
 body.contact
 
+    .contactSuccess
+        display none
+        width 50%
+        text-align center
+        background $cream-lighter
+        margin 0 auto
+        padding 20px 20px 0
+        margin-bottom 10px
+
+        img
+            display inline-block
+            margin-top 30px
+
     .contactFormContainer
         width 50%
         background $cream-lighter
@@ -38,3 +51,15 @@ body.contact
 
             img
                 width 100%
+
+    .button--contactSubmit
+        position relative
+
+    .spinner
+        display none
+        position absolute
+        top 7px
+        margin-left 10px
+
+        &.show
+            display inline-block

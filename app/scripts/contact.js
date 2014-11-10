@@ -215,6 +215,8 @@ $(document).ready(function () {
     // Send the email!
     var sendEmail = function (data) {
 
+        $('.spinner').addClass('show');
+
         $.ajax({
             type:   'POST',
             url:    'https://mandrillapp.com/api/1.0/messages/send-template.json',
@@ -256,6 +258,15 @@ $(document).ready(function () {
                     autotext:   'true',
                     subject:    'Message from ArabianFancy.com'
                 }
+            },
+            success: function () {
+                $('.spinner').removeClass('show');
+
+                $('.contactFormContainer').slideUp("slow", function() {
+                    $('.contactSuccess').slideDown();
+                });
+
+                sessionStorage.removeItem('favoritesIDs');
             }
         });
     }
