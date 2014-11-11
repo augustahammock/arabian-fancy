@@ -38,7 +38,7 @@ var
     pathsJSON         = JSON.stringify(paths),
     defaults          = {
         title:        'Arabian Fancy Tack',
-        description:  'Arabian Fancy Tack specializes in custom handmade adornments for Arabian horses seen in photo shoots, presentations, and show rings worldwide!',
+        description:  'Arabian Fancy Tack specializes in custom handmade adornments for Arabian horses seen in photo shoots, presentations, and show rings worldwide. Let Arabian Fancy create your horse\'s next timeless piece!',
         keywords:     'Arabian horse, Arabian tack, Arabian halter, Arabian presentation sets, Arabian show halter, handmade tack, custom Arabian tack, tack for photo shoots'
     }
 ;
