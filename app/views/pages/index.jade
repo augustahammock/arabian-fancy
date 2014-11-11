@@ -1,8 +1,16 @@
 extends ../layouts/main
 
+block append styles
+    link(rel='stylesheet', href='#{paths.lib}/fancybox/source/jquery.fancybox.css')
+    link(rel='stylesheet', href='#{paths.lib}/fancybox/source/helpers/jquery.fancybox-thumbs.css')
+
 block append footer-scripts
     //- Base libraries
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+
+    //- Interaction libraries and their dependencies
+    script(src='#{paths.lib}/fancybox/source/jquery.fancybox.pack.js')
+    script(src='#{paths.lib}/fancybox/source/helpers/jquery.fancybox-thumbs.js')
 
     //- Page-specific scripts
     script(src='#{paths.js}/home.js')
@@ -38,7 +46,7 @@ block content
         section.gallery--spotlight
             h3 Arabian Fancy is in the Spotlight!
             ul
-                li: img(src='#{paths.img}/home/spotlight_1.jpg', alt='Tack by Arabian Fancy')
-                li: img(src='#{paths.img}/home/spotlight_2.jpg', alt='Tack by Arabian Fancy')
-                li: img(src='#{paths.img}/home/spotlight_3.jpg', alt='Tack by Arabian Fancy')
-                li: img(src='#{paths.img}/home/spotlight_4.jpg', alt='Tack by Arabian Fancy')
+                li: a.fancybox(rel='group' href='#{paths.img}/home/spotlight_1large.jpg'): img(src='#{paths.img}/home/spotlight_1.jpg', alt='Tack by Arabian Fancy')
+                li: a.fancybox(rel='group' href='#{paths.img}/home/spotlight_2large.jpg'): img(src='#{paths.img}/home/spotlight_2.jpg', alt='Tack by Arabian Fancy')
+                li: a.fancybox(rel='group' href='#{paths.img}/home/spotlight_3large.jpg'): img(src='#{paths.img}/home/spotlight_3.jpg', alt='Tack by Arabian Fancy')
+                li: a.fancybox(rel='group' href='#{paths.img}/home/spotlight_4large.jpg'): img(src='#{paths.img}/home/spotlight_4.jpg', alt='Tack by Arabian Fancy')

@@ -36,6 +36,23 @@ $(document).ready(function () {
     }
 
 
+    $('.fancybox').fancybox({
+        prevEffect:         'fade',
+        nextEffect:         'fade',
+        margin:             [15, 15, 40, 15],
+        padding:            0,
+        helpers:            {
+            overlay:        {
+                locked:     false
+            },
+            title: {
+                type:       'inside',
+                position:   'bottom'
+            }
+        }
+    });
+
+
 
     colorSelectors.on('mouseenter', changeHorseColor);
     colorSelectors.on('click', viewTackByColor);

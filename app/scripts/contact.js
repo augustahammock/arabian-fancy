@@ -248,7 +248,7 @@ $(document).ready(function () {
                 message: {
                     from_email: data.email,
                     to: [{
-                        email:  'augusta@augustahammock.com',
+                        email:  'arabianfancy@live.com',
                         name:   'Gina Dupree',
                         type:   'to'
                     }],
