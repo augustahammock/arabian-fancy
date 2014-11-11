@@ -6,7 +6,6 @@ body.contact
 
     .contactSuccess
         display none
-        width 50%
         text-align center
         background $cream-lighter
         margin 0 auto
@@ -15,10 +14,10 @@ body.contact
 
         img
             display inline-block
+            max-width 100%
             margin-top 30px
 
     .contactFormContainer
-        width 50%
         background $cream-lighter
         margin 0 auto
         padding 20px
@@ -63,3 +62,7 @@ body.contact
 
         &.show
             display inline-block
+
+    // +below(400px)
+    //     .contactSuccess
+    //         padding 15px 5px

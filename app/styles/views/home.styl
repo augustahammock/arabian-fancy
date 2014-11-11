@@ -119,54 +119,121 @@ body.home
 
 
 
-    +below(500px)
+    +below(1260px)
+
+        .hero
+            height 0
+            padding-bottom 40%
+
+            .colorSelector
+                margin-top 11%
+                margin-right 5%
+
+        .heroImage
+            top -80px
+            left -15%
+            max-width 70%
+
+
+
+    +below(1000px)
+
         .global-header
-            padding-top 0
-            padding-bottom 175px
+            padding-bottom 160px
 
         .website-title
-            top 60px
-            
             h1
-                font-size 34px
-                margin-bottom 20px
-        
+                font-size 68px
+
+        .hero
+            padding-bottom 400px
+
+            .colorSelector
+                float left
+                margin-top 90px
+                margin-right 0
+
+        .heroImage
+            top -130px
+            left auto
+            right -40px
+            max-width 90%
+            opacity .5
+
+
+
+    +below(768px)
+
+        .global-header
+            padding-bottom 140px
+
+            h1
+                font-size 58px
+
+            h2
+                font-size 27px
+
+        .hero
+            padding-bottom 300px
+
+            .colorSelector
+                margin-top 30px
+
+        .heroImage
+            max-width 100%
+            right -110px
+
+        .intro
+            width 50%
+
+        .gallery--spotlight
+            width 50%
+
+
+
+    +below(700px)
+
+        .heroImage
+            right -160px
+
+
+
+    +below(600px)
+
+        .global-header
+            padding-bottom 120px
+
+            h1
+                font-size 48px
+
+            h2
+                font-size 22px
+
         .hero
             height auto
             padding 20px 0
             margin-bottom 20px
-        
+
+            .colorSelector
+                width 100%
+                text-align center
+                margin-top 0
+
+                li
+                    display inline-block
+                    float none
+
+
         .heroImage
             display none
-            position absolute
-            width 80%
-            top -70px
-            left auto
-            right 30px
-            opacity .3
-        
-        .colorSelector
-            width 100%
-            text-align center
-            margin-top 0
-            
-            ul
-                margin-bottom 0
-            
-            li
-                display inline-block
-                float none
-        
-        .colorImages
-            display none
-        
+
         .intro
             float none
             width 100%
             text-align center
             padding 0
             margin-bottom 25px
-        
+
         .gallery--spotlight
             float none
             width 100%
@@ -174,6 +241,27 @@ body.home
             background $cream-lighter
             border 0
             padding 10px
-            
+
             h3
                 margin-bottom 10px
+
+
+
+    +below(500px)
+        .global-header
+            padding-top 0
+            padding-bottom 75px
+
+        .global-nav
+            position absolute
+            top 0
+            left 0
+            right 0
+
+        .website-title
+            position relative
+            top 60px
+
+            h1
+                font-size 34px
+                margin-bottom 20px
