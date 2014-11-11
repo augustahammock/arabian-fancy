@@ -18,7 +18,6 @@
 
 
 
-
     .global-nav
         text-align center
         background $cranberry-dark url(../img/global/bg_nav.png) repeat-x center center
@@ -45,3 +44,29 @@
 
         a.active
             color $cream
+
+
+
+    //+below(1260px)
+
+
+    //+below(768px)
+
+
+    +below(500px)
+        .global-nav
+            background $cranberry-dark
+            
+            .nav-container
+                padding 0
+
+            a:link,
+            a:visited
+                font-size 1.1rem
+                padding 10px 15px 6px
+                
+                &:first-child
+                    padding-left 0
+                
+                &:last-child
+                    padding-right 0

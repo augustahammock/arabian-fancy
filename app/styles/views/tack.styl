@@ -128,7 +128,7 @@ body.tack
         vertical-align top
         width 22.5%
         height 177px
-        margin 0 1.25% 21px
+        margin 0 1.25% 2.5%
         overflow hidden
 
         a
@@ -155,3 +155,19 @@ body.tack
     .tackItem:hover .meta
         opacity 1
         transition opacity .2s
+    
+    +below(600px)
+        
+        .utilities
+            display none
+        
+        .tackLoading
+            margin-top 100px
+        
+        .tackContainer
+            width 100%
+            
+        .tackItem
+            width 30.5%
+            height 0
+            padding-bottom 31%
