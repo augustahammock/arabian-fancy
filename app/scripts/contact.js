@@ -221,34 +221,41 @@ $(document).ready(function () {
             type:   'POST',
             url:    'https://mandrillapp.com/api/1.0/messages/send-template.json',
             data: {
-                key: 'RlbIXfpr5DzI8fsRNzXILw',
-                template_name: 'arabian-fancy-contact-form',
+                key: 'srG-xJXHlA6YNZAYKGq_wg',
+                template_name: 'arabianfancy-com-contact-form',
                 template_content: [
                     {
-                        name: 'heading',
-                        content: 'You\'ve got a message from ArabianFancy.com!'
-                    },
-                    {
-                        name: 'name',
-                        content: data.name
-                    },
-                    {
-                        name: 'interest',
-                        content: data.interest
-                    },
-                    {
-                        name: 'message',
-                        content: data.message
-                    },
-                    {
-                        name: 'favorites',
-                        content: data.favoritesHTML
+                        name: 'name1',
+                        content: 'name1'
                     }
                 ],
                 message: {
-                    from_email: data.email,
+                    global_merge_vars: [
+                        {
+                            name: 'heading',
+                            content: 'You\'ve got a message from ArabianFancy.com!'
+                        },
+                        {
+                            name: 'name',
+                            content: data.name
+                        },
+                        {
+                            name: 'interest',
+                            content: data.interest
+                        },
+                        {
+                            name: 'message',
+                            content: data.message
+                        },
+                        {
+                            name: 'favorites',
+                            content: data.favoritesHTML
+                        }
+                    ],
+                    merge: true,
+                    from_email: 'augusta@augustahammock.com',
                     to: [{
-                        email:  'arabianfancy@live.com',
+                        email:  'augusta@augustahammock.com',
                         name:   'Gina Dupree',
                         type:   'to'
                     }],
